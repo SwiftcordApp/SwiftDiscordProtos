@@ -1,0 +1,3 @@
+[submodule "discord-protos"]
+	path = discord-protos
+	url = git@github.com:dolfies/discord-protos.git

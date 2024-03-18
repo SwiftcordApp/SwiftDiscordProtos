@@ -11,11 +11,13 @@ let package = Package(
             name: "SwiftDiscordProtos",
             targets: ["SwiftDiscordProtos"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.25.0")
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SwiftDiscordProtos"),
+            name: "SwiftDiscordProtos",
+            dependencies: [.product(name: "SwiftProtobuf", package: "swift-protobuf")]),
         .testTarget(
             name: "SwiftDiscordProtosTests",
             dependencies: ["SwiftDiscordProtos"]),
